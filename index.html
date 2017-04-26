@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Capstone Project - Han Deng</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <style>
+  
+         
+    /* Style for our header texts
+    * --------------------------------------- */
+
+    /* Centered texts in each section
+    * --------------------------------------- */
+    .section{
+        text-align:center;
+    }
+
+    #about{
+        background-image: url('img/page1.jpg');
+        background-size: 100% auto;
+
+    }
+    
+    #analysis{
+        background-image: url('img/page_result.jpg');
+    }
+
+    #model{
+        height: 100%;
+    }
+    
+
+    </style>
+  
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">HOME</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">Overview</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#model">Method</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#prediction">Prediction</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#analysis">Analysis</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">US Air passenger demand</h1>
+                <h3>Predicting the passenger volumn of US core air travel markets</h3>
+                <br>
+                <br>
+                <br>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Let's start!</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Passengers and destinations</h2>
+                    <hr class="light">
+                </div>
+            </div>
+            <p style="color:white;text-align:left; padding-left: 140px; padding-right: 125px">
+            Based on the report of the 1000 largest domestic city-pair markets in US, the information regards every origin city, including the number of passengers per day and the destination cities is presented in the map.  
+            <br>
+ 
+            <div id="plotly-div"></div>
+            <script src="js/market.js"></script>
+        </div>
+    </section>
+
+    <section id="model">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Process</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <img src="img/icon_data.jpg" height="28%" width="28%" class="text-primary sr-icons" alt="">
+                        <h3>Data</h3>
+                        <p class="text-muted">Sources: <span>U.S. Department of Transportation </span>
+                        <br>
+                        <span>U.S. Bureau of Economic Analysis</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <img src="img/icon_trees.png" height="28%" width="28%" class="text-primary sr-icons" alt="">
+                        <h3>Prediction</h3>
+                        <p class="text-muted">A random forest regressor</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <img src="img/icon_clustering.png" height="28%" width="28%" class="text-primary sr-icons" alt="">
+                        <h3>Cluster analysis</h3>
+                        <p class="text-muted">K-Means clustering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="primary">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Features</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 text-center" style="padding-left: 200px">
+                    <div class="service-box">
+                        <img src="img/feature_cities.png" height="50%" width="50%" class="text-primary sr-icons" alt="">
+                        <h3>Origin & Destination</h3>
+                        <p class="text-muted">GDP, income, population, employment
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-center"  style="padding-right: 220px">
+                    <div class="service-box">
+                        <img src="img/feature_flights.png" height="36%" width="36%" class="text-primary sr-icons" alt="">
+                        <h3>Flight</h3>
+                        <p class="text-muted">Fare, distance</p>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section>
+
+    <section class="bg-primary" id="prediction">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Prediction</h2>
+                    <hr class="light">
+                </div>
+            </div>
+            <p style="color:white;text-align:left; padding-left: 140px; padding-right: 125px">
+            The number of each city-pair market has a different degree of correlation with the features mentioned before. A random forest regressor is used to predict the number of passengers, with R2 = 0.85.  
+            <br>
+            <br>
+        <div class="container">
+            <div class="row">
+                <div  class="col-lg-6 col-md-6 text-center">
+                    <img src="js/predictions1log.png" height="97%" width="97%">
+                </div>
+                <div  id="plotly-div4" class="col-lg-6 col-md-6 text-center">
+                    <img src="js/predictions2log.png" height="97%" width="97%">
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <section class="bg-primary" id="analysis">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <h2 class="section-heading">Clustering</h2>
+                    <hr class="light">
+                </div>
+            </div>
+            <p style="color:white;text-align:left; margin-top: 0; margin-bottom:0; padding-left: 140px; padding-right: 120px; padding-bottom: 0">
+            After performing an analysis of feature importance, the product of the Real GPD of origin and destination cities and the ticket fare are the two most informative features. A k-means clustering with on the these variables with k = 3, returns three categories of city-pair markets. <br>
+            1. <span style="color:#CC4778;">Large market: high GDP</span><br>
+            2. <span style="color:#0D0887;">Small market: low GDP (constrain), low fare</span><br>
+            3. <span style="color:#EEF721;">Small market: high GDP, high fare (constrain)</span><br>
+            </p>
+            <div style="height:500px;width:750px;margin:0 auto;padding-top: 0" id="plotly-div2"></div>
+            <script src="js/features20012015logsample.js"></script>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>
